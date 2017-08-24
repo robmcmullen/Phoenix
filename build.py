@@ -1251,6 +1251,8 @@ def cmd_build_wx(options, args):
     if options.gtk3:
         build_options.append('--gtk3')
 
+    build_options.extend(['--features=--with-libpng=builtin --with-libjpeg=builtin --with-libtiff=builtin'])
+
     try:
         # Import and run the wxWidgets build script
         from buildtools import build_wxwidgets as wxbuild
